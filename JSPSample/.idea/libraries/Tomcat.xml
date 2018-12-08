@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Tomcat">
+    <CLASSES>
+      <root url="file:///opt/Tomcat" />
+      <root url="file:///opt/Tomcat/bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///opt/Tomcat/webapps/docs/appdev/sample/src" />
+      <root url="file:///opt/Tomcat/webapps/examples/WEB-INF/classes" />
+      <root url="file:///opt/Tomcat/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file:///opt/Tomcat/webapps/examples/jsp/plugin/applet" />
+    </SOURCES>
+    <jarDirectory url="file:///opt/Tomcat/bin" recursive="false" />
+  </library>
+</component>

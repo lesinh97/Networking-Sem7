@@ -1,0 +1,6 @@
+Muốn nhận datagram thì phải nhận đối tượng của datagram trước khi nhận packet. 
+
+public SocketAddress() return an object that contain IP address and remote port number.
+public byte[] getData() return an array of byte contain data from datagram. Convert these all byte into another type of data before processing. 
+
+void recive() & send() take DatagramPacket as an args. 

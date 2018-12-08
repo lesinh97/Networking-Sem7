@@ -1,0 +1,36 @@
+- có thể nhúng một trang jsp hay html vào trang jsp dùng <% @include file %>, <% include file = "path" %> - chỉ nhúng các mã nguồn tĩnh.
+- nếu muốn nhúng kết quả kết xuất từ các trang jsp, servelet hay html khác vào trang hiện hành dùng <jsp: include> với cú pháp <jsp:include page = "filename" flush="true">
+- jsp:forward cho phép truyền tham số từ trang này qua trang kia.
+- dùng sendRedirect() chỉ thực hiện triệu gọi trang mà không truyền tham số của trang hiện hành cho trang đó.
+	vd: response.sendRedirect("page2.jsp")
+5 đối tượng mặc định trong jsp:
++ out.println
++ request: 
+	- getParameter(): lấy tham số hay dữ liệu do trình khách gửi lên
++ session: Lưu vết phiên làm việc giữa khách và chủ
+	- putValue(), getValue()
+	- setAttribute(), getAttribute()
++ response: Cho phép phản hồi thông tin xử lý từ chủ về trình duyệt.
++ exception
+
+Model: hỗ trợ cách thức xử lý dữ liệu, khả năng giao tiếp và trao đổi dữ liệu giữa các đối tượng. Model sẽ là JavaBean hoặc Enterprise JavaBean hay Web services. (JavaBean chứa các thuộc tính get, set của đối tượng).
+View: Có khả năng truy cập model, truy xuất model thông qua những hành vi mà model cho phép nhưng view không thể thay đổi thành phần trong model.
+Controller: Hỗ trợ kết nối giữa model và view. giúp model xác định được view trình bày.
+Cơ bản servlet là controller nhưng nếu bên trong có trả về HTML thì nó đóng vai trò là view. 
+
+Model: 
+	Model.Bean: Chứa các thực thể, gồm dữ liệu (private), kèm theo các phương thức get/set. Nếu kiểu dữ liệu là boolean thì trả về true/false
+	Model.Dao: Thực hiện các công việc liên quan đến CSDL
+		Kết nối, lấy dữ liệu, truy vấn, chỉnh sửa, xoá dữ liệu trực tiếp với database.
+	Model.Bo: Truyền yêu cầu từ Servlet qua DAO, lấy dữ liệu từ DAO về cho Servlet. Ngoài ra còn xử lý các yêu cầu nghiệp vụ.
+View: Là các trang JSP, kết quả trả hiển thị cho người dùng.
+Controller: Là các Servlet, có nhiệm vụ nhận yêu cầu từ người dùng, đưa yêu cầu và nhận dữ liệu từ tầng Model, từ đó chuyển hướng và trả về cho View.
+
+Chú ý của mô hình MVC:
+	Bean chứa các thực thể, có thể sử dụng ở bất cứ nơi nào cần thiết, DAO, BO, JSP, Servlet, Bean
+	Các kết nối đến database chỉ thực hiện ở DAO, các tầng khác không liên quan đến database.
+	DAO chỉ cho phép gọi từ BO, các nơi khác không được gọi là DAO
+	BO chỉ cho phép gọi từ Controller (servlet), các nơi khác không được gọi BO
+	Servlet chứa các nhiện vụ nhận dữ liệu, trả dữ liệu và điều hướng. cho nên các xử lý nghiệp vụ được xử lý ở BO.
+	JSP chỉ nhận dữ liệu từ Servlet, không được sử dụng BO vào DAO để lấy dữ liệu.
+	Không được trực tiếp gọi trang JSP mà phải thông qua servlet.

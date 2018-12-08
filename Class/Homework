@@ -1,0 +1,8 @@
+1. Chuong trinh Client/Server theo UDP, Client nhan ket qua tra ve ngay thang nam theo ICT.
+2. Xay dung chuong trinh hoi thoai theo Client/Server dung UDP va Thread.
+3. Chuyen cac bai o phan TCP sang viet lai bang UDP (co dung Thread)
+    - Xu ly chuoi.
+    - Xu ly bieu thuc.
+
+
+4. Viết chương trình truy cập CSDL theo client/server dùng TCP

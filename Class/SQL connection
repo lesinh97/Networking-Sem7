@@ -1,0 +1,13 @@
+# 4 bước tạo, kết nối CSDL
+### Nạp trình điều khiển.
+### Tạo thông tin kết nối và đối tượng connection.
+### Tạo đối tượng statement để thực thi các lệnh truy vấn SQL
+### Xử lý dữ liệu.
+
+# Tạo CSDL
+
+id  | Tên KH  | Địa chỉ | Lương
+|---|---------|---------|-----
+|1|Lê A|||
+|2|Trần B|||
+|3|Nguyễn C|||
